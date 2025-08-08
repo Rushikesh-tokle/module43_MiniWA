@@ -14,7 +14,10 @@
             <p> from: <%=chat.from%></p>
             <div class="msg">
             <p> msg: <%=chat.msg%></p>
-            <form action="/chats/<%=chat._id%>/edit" method="get"><button>Edit Msg</button></form>
+            <form action="/chats/<%=chat._id%>/edit" method="get"><button>Edit Msg</button>
+            </form>
+            <form action="/chats/<%=chat._id%>?_method=DELETE" method="post"><button>Delete Chat</button>
+            </form>
             </div>
              <p>received by: <%=chat.to%></p>
              <hr>
