@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>whatsapp Record</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h3>All chats</h3>
+    <%for(let chat of chats){%>
+
+        <div class="chat">
+            <p> from: <%=chat.from%></p>
+            <div class="msg">
+            <p> msg: <%=chat.msg%></p>
+            </div>
+             <p>received by: <%=chat.to%></p>
+             <hr>
+            <p>time: <%=chat.createdAt.toString().split(" ")[4]%></p>
+            <p>date: <%=chat.createdAt.toString().split(" ").slice(0,4).join(" ")%></p>
+
+        </div><br><br><br>
+<%}%>
+<hr><hr>
+<form action="/chats/new" method="get">
+   <button>New Chat</button> 
+</form>
+</body>
+</html>
